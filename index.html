@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enhanced HTML5 Content & Forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    header, footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      border-radius: 10px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    form {
+      background: #fafafa;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    fieldset {
+      border: 1px solid #aaa;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input:invalid {
+      border-color: #e74c3c;
+    }
+
+    input:valid {
+      border-color: #2ecc71;
+    }
+
+    input[type="submit"] {
+      background: #2980b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    input[type="submit"]:hover {
+      background: #1f6391;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    img, audio, video {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>📘 Enhancing HTML5 Content & Mastering Forms</h1>
+    <p>Semantic Content, Tables, Media, and Smart Forms</p>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+
+    <!-- Section: Lists -->
+    <section>
+      <h2>📝 My Favorite Learning Resources</h2>
+
+      <!-- Collapsible interactive list -->
+      <details>
+        <summary>Top HTML & CSS Tutorials</summary>
+        <ul>
+          <li>freeCodeCamp</li>
+          <li>MDN Web Docs</li>
+          <li>W3Schools (for quick syntax)</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Other Learning Tools</summary>
+        <ol>
+          <li>VS Code + Live Server</li>
+          <li>CodePen for fast prototypes</li>
+          <li>ChatGPT for explanations 😉</li>
+        </ol>
+      </details>
+    </section>
+
+    <!-- Section: Table -->
+    <section>
+      <h2>💰 Pricing Comparison Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Features</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>HTML, CSS Guides</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>JavaScript, DOM, Projects</td>
+            <td>$9/month</td>
+          </tr>
+          <tr>
+            <td>Expert</td>
+            <td>Backend + Full Stack</td>
+            <td>$25/month</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Media -->
+    <section>
+      <h2>🎥 Multimedia Embeds</h2>
+      <p><strong>My profile image:</strong></p>
+      <img src="data:image/jpeg;base64,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" alt="Placeholder profile image" />
+
+      <p><strong>Sample background music (mp3):</strong></p>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
+
+      <p><strong>Intro Video Clip (mp4):</strong></p>
+      <video controls width="400">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Section: HTML5 Form with validation -->
+    <section>
+      <h2>📨 Contact Form (HTML5 Validation Only)</h2>
+      <form>
+        <fieldset>
+          <legend>Personal Info</legend>
+
+          <label for="fullname">Full Name *</label>
+          <input type="text" id="fullname" name="fullname" required minlength="3" placeholder="John Doe" />
+
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Feedback</legend>
+
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">-- Select a topic --</option>
+            <option value="html">HTML & Structure</option>
+            <option value="forms">Forms</option>
+            <option value="media">Embedding Media</option>
+          </select>
+
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" rows="4" maxlength="300" placeholder="Your thoughts..."></textarea>
+
+          <label>
+            <input type="checkbox" name="subscribe" checked />
+            Subscribe to updates
+          </label>
+        </fieldset>
+
+        <input type="submit" value="Send Message" />
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 | HTML5 Mastery Project by [Your Name]</p>
+  </footer>
+
+</body>
+</html>
