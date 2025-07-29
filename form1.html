@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sleek Form UI with CSS Magic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* 🌗 Light/Dark mode toggle-ready */
+    :root {
+      --bg: #f0f2f5;
+      --card-bg: rgba(255, 255, 255, 0.25);
+      --text: #333;
+      --input-bg: rgba(255, 255, 255, 0.3);
+      --border: rgba(255, 255, 255, 0.5);
+      --focus: #3498db;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-wrapper {
+      backdrop-filter: blur(15px);
+      background: var(--card-bg);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 14px 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: var(--input-bg);
+      color: var(--text);
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 12px;
+      top: 14px;
+      background: transparent;
+      color: #777;
+      font-size: 0.95rem;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: var(--focus);
+    }
+
+    /* Floating label animation */
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label,
+    .input-group textarea:focus + label,
+    .input-group textarea:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 10px;
+      font-size: 0.75rem;
+      background: var(--card-bg);
+      padding: 0 4px;
+      color: var(--focus);
+    }
+
+    input[type="submit"] {
+      background: var(--focus);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: #2c80c8;
+    }
+
+  </style>
+</head>
+<body>
+
+  <form class="form-wrapper" novalidate>
+    <h2>Contact Us 💬</h2>
+
+    <!-- Full Name Input -->
+    <div class="input-group">
+      <input type="text" id="name" name="name" required placeholder=" " minlength="3" />
+      <label for="name">Full Name *</label>
+    </div>
+
+    <!-- Email Input -->
+    <div class="input-group">
+      <input type="email" id="email" name="email" required placeholder=" " />
+      <label for="email">Email Address *</label>
+    </div>
+
+    <!-- Phone Input with pattern validation -->
+    <div class="input-group">
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder=" " />
+      <label for="phone">Phone Number (10 digits)</label>
+    </div>
+
+    <!-- Message Textarea -->
+    <div class="input-group">
+      <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+      <label for="message">Your Message *</label>
+    </div>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Send Message" />
+  </form>
+
+</body>
+</html>
